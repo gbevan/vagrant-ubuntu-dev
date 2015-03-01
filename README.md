@@ -13,3 +13,11 @@ Docker image of Ubuntu with build-essentials etc for development.  For use with 
             end
         end
     end
+
+Build images using:
+
+    docker build -t gbevan/vagrant-ubuntu-dev:latest .
+    
+    docker build -t gbevan/vagrant-ubuntu-dev:trusty trusty/
+    
+    docker build -t gbevan/vagrant-ubuntu-dev:precise precise/
