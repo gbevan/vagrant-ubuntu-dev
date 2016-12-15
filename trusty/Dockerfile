@@ -19,8 +19,9 @@ ENV LC_ALL=C
 RUN apt-get update && \
     apt-get install -y software-properties-common && \
     apt-add-repository ppa:git-core/ppa -y && \
-    apt-get dist-upgrade -y && \
+    apt-get upgrade -y && \
     apt-get install -y wget aptitude htop vim git traceroute dnsutils curl ssh sudo psmisc gcc make build-essential pkg-config libglib2.0-dev libpcap-dev libdbi-dev libdbd-pgsql flex sysstat postgresql bison packaging-dev tree && \
+    apt-get dist-upgrade -y && \
     mkdir /var/run/sshd && \
     sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config && \
     sed -ri 's/#UsePAM no/UsePAM no/g' /etc/ssh/sshd_config && \
