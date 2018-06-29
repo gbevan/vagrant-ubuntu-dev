@@ -18,7 +18,10 @@ ENV LC_ALL=C
 
 RUN apt-get update && \
     apt-get dist-upgrade -y && \
-    apt-get install -y wget aptitude htop vim git traceroute dnsutils curl ssh sudo psmisc gcc make build-essential pkg-config libglib2.0-dev libpcap-dev libdbi-dev libdbd-pgsql flex sysstat postgresql bison packaging-dev tree && \
+    apt-get install -y wget aptitude htop vim git traceroute dnsutils \
+      curl ssh sudo psmisc gcc make build-essential pkg-config \
+      libglib2.0-dev libpcap-dev libdbi-dev libdbd-pgsql flex sysstat \
+      bison packaging-dev tree && \
     mkdir /var/run/sshd && \
     sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config && \
     sed -ri 's/#UsePAM no/UsePAM no/g' /etc/ssh/sshd_config && \
