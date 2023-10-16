@@ -1,5 +1,5 @@
 # Build:
-#   docker build -t gbevan/vagrant-ubuntu-dev:xenial .
+#   docker build -t gbevan/vagrant-ubuntu-dev:focal .
 #
 # Run:
 #  vagrant up --provider=docker
@@ -9,7 +9,7 @@
 #  DOCKER_OPTS="--dns ip_1 --dns ip_2"
 #
 
-FROM ubuntu:xenial
+FROM ubuntu:focal
 MAINTAINER Graham Bevan "graham.bevan@ntlworld.com"
 
 ENV DEBIAN_FRONTEND noninteractive
