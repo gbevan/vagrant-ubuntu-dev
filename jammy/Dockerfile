@@ -1,5 +1,5 @@
 # Build:
-#   docker build -t gbevan/vagrant-ubuntu-dev:bionic .
+#   docker build -t gbevan/vagrant-ubuntu-dev:jammy .
 #
 # Run:
 #  vagrant up --provider=docker
@@ -8,21 +8,19 @@
 # /etc/conf/docker
 #  DOCKER_OPTS="--dns ip_1 --dns ip_2"
 #
+# Push:
+#  docker push gbevan/vagrant-ubuntu-dev:jammy
 
-FROM ubuntu:bionic
+FROM ubuntu:jammy
 MAINTAINER Graham Bevan "graham.bevan@ntlworld.com"
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG=C
 ENV LC_ALL=C
-ENV FORCE_BUILD=1
 
 RUN apt-get update && \
     apt-get dist-upgrade -y && \
-    apt-get install -y wget aptitude htop vim git traceroute dnsutils \
-      curl ssh sudo psmisc gcc make build-essential pkg-config \
-      libglib2.0-dev libpcap-dev libdbi-dev libdbd-pgsql flex sysstat \
-      bison packaging-dev tree && \
+    apt-get install -y wget aptitude htop vim git traceroute dnsutils curl ssh sudo psmisc gcc make build-essential pkg-config libglib2.0-dev libpcap-dev libdbi-dev libdbd-pgsql flex sysstat postgresql bison packaging-dev tree && \
     mkdir /var/run/sshd && \
     sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config && \
     sed -ri 's/#UsePAM no/UsePAM no/g' /etc/ssh/sshd_config && \

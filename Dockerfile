@@ -8,6 +8,8 @@
 # /etc/conf/docker
 #  DOCKER_OPTS="--dns ip_1 --dns ip_2"
 #
+# Push:
+#  docker push gbevan/vagrant-ubuntu-dev:latest
 
 FROM ubuntu:latest
 MAINTAINER Graham Bevan "graham.bevan@ntlworld.com"

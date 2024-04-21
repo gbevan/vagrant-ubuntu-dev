@@ -8,6 +8,8 @@
 # /etc/conf/docker
 #  DOCKER_OPTS="--dns ip_1 --dns ip_2"
 #
+# Push:
+#  docker push gbevan/vagrant-ubuntu-dev:focal
 
 FROM ubuntu:focal
 MAINTAINER Graham Bevan "graham.bevan@ntlworld.com"
